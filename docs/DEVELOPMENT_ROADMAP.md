@@ -62,7 +62,7 @@ This document outlines the phased engineering milestones to bring **FlowSentinel
   - Anonymized fixture generator (`scripts/generate_sample_fixture.py`).
   - Unit tests for frames, packets, pcap parsing (`tests/test_frames.py`, `test_packet.py`, `test_pcap.py`).
   - Scapy Windows driver bypass in `tests/conftest.py`.
-- [ ] **Task 1.3: Bidirectional Flow Assembly** (`flowsentinel.flows.table`, `record.py`)
+- [x] **Task 1.3: Bidirectional Flow Assembly** (`flowsentinel.flows.table`, `record.py`)
   - Canonical 5-tuple ordering (A.9).
   - Forward/backward direction tracking relative to initiator.
   - Idle timeout (default 60s) and active timeout (default 120s) (FR-FLW-03).

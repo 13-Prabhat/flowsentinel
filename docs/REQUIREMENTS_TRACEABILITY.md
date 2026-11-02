@@ -48,15 +48,15 @@ Status legend:
 
 | ID | Description | Pri | Ver | Rel | Status | Target Path | Verification Test | Notes |
 |---|---|---|---|---|---|---|---|---|
-| FR-FLW-01 | Group packets into bidirectional flows keyed by canonical 5-tuple | M | T | R1 | **Missing** | `flows/table.py` | `tests/test_flows.py` | Canonical order sorted endpoints |
-| FR-FLW-02 | Record flow initiator (first packet) and label fwd/bwd directions | M | T | R1 | **Missing** | `flows/table.py` | `tests/test_flows.py` | Direction tagging |
-| FR-FLW-03 | Close flow after idle timeout (default 60s) or active timeout (default 120s) | M | T | R1 | **Missing** | `flows/table.py` | `tests/test_flows.py` | Configurable timeouts |
-| FR-FLW-04 | Close TCP flow on FIN in both directions or RST | M | T | R1 | **Missing** | `flows/table.py` | `tests/test_flows.py` | TCP connection teardown |
-| FR-FLW-05 | Flush all open flows at end of input | M | T | R1 | **Missing** | `flows/table.py` | `tests/test_flows.py` | EOF emission |
-| FR-FLW-06 | Bound flow table (default 100,000); evict LRU with reason 'evicted' | M | T | R2 | **Missing** | `flows/table.py` | `tests/test_flows.py` | Memory bounding |
-| FR-FLW-07 | Deterministic flow identifier from key and start time | S | T | R1 | **Missing** | `flows/table.py` | `tests/test_flows.py` | Hash repeatability |
-| FR-FLW-08 | Monotonic clock protection on out-of-order timestamps; count anomalies | S | T | R2 | **Missing** | `flows/table.py` | `tests/test_flows.py` | Clock skew defense |
-| FR-FLW-09 | Support UDP and ICMP flows using timeouts only | M | T | R1 | **Missing** | `flows/table.py` | `tests/test_flows.py` | Connectionless flow support |
+| FR-FLW-01 | Group packets into bidirectional flows keyed by canonical 5-tuple | M | T | R1 | **Implemented** | `flows/table.py` | `tests/test_flows.py` | Canonical order sorted endpoints |
+| FR-FLW-02 | Record flow initiator (first packet) and label fwd/bwd directions | M | T | R1 | **Implemented** | `flows/table.py`, `flows/record.py` | `tests/test_flows.py` | Direction tagging |
+| FR-FLW-03 | Close flow after idle timeout (default 60s) or active timeout (default 120s) | M | T | R1 | **Implemented** | `flows/table.py` | `tests/test_flows.py` | Configurable timeouts |
+| FR-FLW-04 | Close TCP flow on FIN in both directions or RST | M | T | R1 | **Implemented** | `flows/table.py` | `tests/test_flows.py` | TCP connection teardown |
+| FR-FLW-05 | Flush all open flows at end of input | M | T | R1 | **Implemented** | `flows/table.py` | `tests/test_flows.py` | EOF emission |
+| FR-FLW-06 | Bound flow table (default 100,000); evict LRU with reason 'evicted' | M | T | R2 | **Implemented** | `flows/table.py` | `tests/test_flows.py` | Memory bounding & eviction counter |
+| FR-FLW-07 | Deterministic flow identifier from key and start time | S | T | R1 | **Implemented** | `flows/record.py` | `tests/test_flows.py` | Hash repeatability |
+| FR-FLW-08 | Monotonic clock protection on out-of-order timestamps; count anomalies | S | T | R2 | **Implemented** | `flows/table.py` | `tests/test_flows.py` | Clock skew defense |
+| FR-FLW-09 | Support UDP and ICMP flows using timeouts only | M | T | R1 | **Implemented** | `flows/table.py` | `tests/test_flows.py` | Connectionless flow support |
 
 ---
 
@@ -263,7 +263,7 @@ Status legend:
 | Must (M) | 114 |
 | Should (S) | 41 |
 | Could (C) | 6 |
-| **Implemented** | **20** |
+| **Implemented** | **29** |
 | **Partially implemented** | **8** |
-| **Missing** | **133** |
+| **Missing** | **124** |
 | **Blocked** | **0** |
