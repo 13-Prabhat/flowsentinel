@@ -32,7 +32,7 @@ the analyst **why** each alert was raised.
 
 ```
 pcap / live interface -> parser -> flow assembler -> features
-                                              |-> rule detectors --\
+                                          |-> rule detectors --\
                                               |-> ML detectors ----+-> explainer -> alerts -> API / dashboard
 ```
 
