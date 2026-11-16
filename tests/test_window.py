@@ -1,11 +1,16 @@
 from __future__ import annotations
+
 from collections import Counter
+
 import pytest
+
 from flowsentinel.features.window import (
     HostWindowManager,
     compute_shannon_entropy,
 )
 from flowsentinel.parser.packet import PROTO_TCP, Packet, TcpFlags
+
+
 def _make_pkt(
     src_ip: str = "10.0.0.1",
     dst_ip: str = "93.184.216.34",
