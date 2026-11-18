@@ -1,8 +1,10 @@
 from __future__ import annotations
+
 import math
 from collections import Counter, OrderedDict, deque
 from dataclasses import asdict, dataclass
 from typing import TYPE_CHECKING, Any, Final
+
 if TYPE_CHECKING:
     from flowsentinel.parser.packet import Packet
 DEFAULT_WINDOW_S: Final[float] = 10.0
