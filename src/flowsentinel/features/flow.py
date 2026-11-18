@@ -8,11 +8,15 @@ from flowsentinel.features.schema import FLOW_FEATURE_NAMES
 
 if TYPE_CHECKING:
     from flowsentinel.flows.record import FlowRecord
+
+
 def _sanitize_float(val: float, default: float = 0.0) -> float:
     """Ensure float value is finite, replacing NaN or inf with default (FR-FEA-04)."""
     if not math.isfinite(val):
         return default
     return float(val)
+
+
 @dataclass(slots=True)
 class FlowFeatures:
     """Computed flow features and metadata for a single bidirectional flow."""

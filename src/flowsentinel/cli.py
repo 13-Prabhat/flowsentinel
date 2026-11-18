@@ -13,8 +13,11 @@ from flowsentinel.logging import setup_logging
 from flowsentinel.parser.pcap import read_pcap
 
 VERSION = "0.0.1"
+
+
 class ArgumentParserWithExitCode(argparse.ArgumentParser):
     """Custom ArgumentParser that exits with code 2 on argument errors (FR-CLI-01)."""
+
     def error(self, message: str) -> None:
         sys.stderr.write(f"Error: {message}\n")
         self.print_usage(sys.stderr)

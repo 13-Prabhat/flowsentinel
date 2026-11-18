@@ -8,6 +8,7 @@ from typing import Any
 
 LOGGER_NAME = "flowsentinel"
 
+
 class JsonFormatter(logging.Formatter):
     """Formats log records as single-line JSON objects."""
 

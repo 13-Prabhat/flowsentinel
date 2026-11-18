@@ -33,6 +33,8 @@ def _make_pkt(
         tcp_flags=TcpFlags(flags) if proto == PROTO_TCP else None,
         window=64240,
     )
+
+
 def test_shannon_entropy_appendix_a2_numerical_examples():
     # 1. Normal host: 90 connections to 443, 10 to 53 -> ~0.47 bits
     normal_counts = Counter({443: 90, 53: 10})

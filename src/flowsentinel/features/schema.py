@@ -4,6 +4,8 @@ from dataclasses import dataclass
 from typing import Final
 
 FEATURE_SCHEMA_VERSION: Final[int] = 1
+
+
 @dataclass(frozen=True, slots=True)
 class FeatureField:
     """Metadata describing an extracted flow or window feature."""
