@@ -1,8 +1,11 @@
 from __future__ import annotations
+
 from collections import defaultdict, deque
 from typing import Any, Final
+
 from flowsentinel.detectors.base import Alert, BaseDetector
 from flowsentinel.parser.packet import Packet, TcpFlags
+
 DEFAULT_MIN_CONNECTIONS: Final[int] = 20
 DEFAULT_WINDOW_S: Final[float] = 60.0
 DEFAULT_MONITORED_PORTS: Final[tuple[int, ...]] = (21, 22, 23, 3389)
